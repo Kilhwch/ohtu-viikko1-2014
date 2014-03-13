@@ -23,7 +23,7 @@ public class VarastoTest {
     @Test
     public void lisaaTayteenVarastoon() {
         varasto.lisaaVarastoon(7);
-        varasto.lisaaVarastoon(5);
+//        varasto.lisaaVarastoon(5); //rikottu testi
         assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
     }
     
