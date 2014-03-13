@@ -19,6 +19,35 @@ public class VarastoTest {
     public void setUp() {
         varasto = new Varasto(10);
     }
+    
+    @Test
+    public void lisaaTayteenVarastoon() {
+        varasto.lisaaVarastoon(7);
+        varasto.lisaaVarastoon(5);
+        assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    
+    @Test
+    public void otaTyhjastaVarastosta() {
+        varasto.lisaaVarastoon(3);
+        varasto.otaVarastosta(5);
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void lisattavaMaaraNegatiivinen() {
+        varasto.lisaaVarastoon(-5);
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void otettavaMaaraNegatiivinen() {
+        varasto.lisaaVarastoon(5);
+        varasto.otaVarastosta(-3);
+        assertEquals(5, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
 
     @Test
     public void konstruktoriLuoTyhjanVaraston() {
