@@ -20,6 +20,8 @@ public class VarastoTest {
         varasto = new Varasto(10);
     }
     
+    // webhook update test
+    
     @Test
     public void lisaaTayteenVarastoon() {
         varasto.lisaaVarastoon(7);
